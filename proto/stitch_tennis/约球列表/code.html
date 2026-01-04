@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>约球列表</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec49",
+                        "primary-dark": "#0eb538",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                        "surface-dark": "#1a2c20",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "Noto Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<!-- Main Container -->
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Sticky Header Section -->
+<div class="sticky top-0 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-white/5">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between px-4 py-3">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">约球列表</h1>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary-dark dark:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">add</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-2">
+<div class="relative flex w-full items-center">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 20px;">search</span>
+</div>
+<input class="block w-full rounded-xl border-none bg-white dark:bg-surface-dark py-3 pl-10 pr-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary shadow-sm" placeholder="搜索活动名称、球场或地点" type="text"/>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 py-3 overflow-x-auto no-scrollbar">
+<!-- Active Filter -->
+<button class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 shadow-sm shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-black" style="font-size: 18px;">calendar_month</span>
+<span class="text-sm font-semibold text-black">全部日期</span>
+<span class="material-symbols-outlined text-black" style="font-size: 18px;">arrow_drop_down</span>
+</button>
+<!-- Inactive Filter -->
+<button class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-4 shadow-sm transition-transform active:scale-95">
+<span class="text-sm font-medium text-gray-700 dark:text-gray-200">区域</span>
+<span class="material-symbols-outlined text-gray-500" style="font-size: 18px;">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-4 shadow-sm transition-transform active:scale-95">
+<span class="text-sm font-medium text-gray-700 dark:text-gray-200">水平</span>
+<span class="material-symbols-outlined text-gray-500" style="font-size: 18px;">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-4 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-gray-500" style="font-size: 18px;">tune</span>
+<span class="text-sm font-medium text-gray-700 dark:text-gray-200">筛选</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 px-4 py-2 space-y-4 pb-24">
+<!-- Sort Bar -->
+<div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 px-1">
+<span>共找到 24 个活动</span>
+<div class="flex items-center gap-1">
+<span>按推荐排序</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">sort</span>
+</div>
+</div>
+<!-- Card 1: Active/Hot -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm transition-all hover:shadow-md border border-transparent dark:border-white/5">
+<!-- Header with Badge and Image -->
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary-dark dark:text-primary ring-1 ring-inset ring-primary/20">NTRP 3.0+</span>
+<span class="inline-flex items-center rounded-md bg-orange-50 px-2 py-0.5 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">仅剩1位</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white leading-tight truncate">周末双打欢乐局</h3>
+<p class="mt-1 flex items-center text-sm text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">schedule</span>
+                            10月12日 周六 10:00 - 12:00
+                        </p>
+<p class="mt-0.5 flex items-center text-sm text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">location_on</span>
+                            朝阳公园网球中心 <span class="ml-1 text-gray-400">(2.5km)</span>
+</p>
+</div>
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-gray-100">
+<img alt="Tennis court surface close up" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxSlGk4QY0r2pT-LVP0mDgDz-kG1r2xixQCR0c4QS4M_DBY9twiIUS5Rv_obUVvNPAzxRY6MSZES15lBWf_8IXpPN_PAgZlVi5Zlt5AYFbNBXJ3KnV0PfyGbcxZJ5KPt58F8YCga7dVxyvVtWI6DzjdZdex5ruD9Oqc50siQ8-iTaoyn95UeK5ulnhoLmIU3hCWUkRwB-K_Kmx4iGQp2immt62p8rvZq5T8T8gdHEA1fF3M7LIx_TsGNYJd_RfccbT5hjDi9CC5Nk"/>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-white/5"></div>
+<!-- Footer: Participants & Action -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="User avatar male" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCP95LMVF6QhX9b1Q9uPNQk4rBlA-kocJHy27uV1o6dQguJ_Aat5rOEMFCtphndSMEr-uj-vlg8384ywc1NqARm82h5GJKUCpRsAjDt7DcZAP9Av8qQ5Q47Kgci_xbLVSTqDIY6qDJaNkEjzye0ZelK4hZw-vhcmc8Dyav-r0c2UEafFWyT46PzJmFm3FzHj7zBsamBwVchEz1z1-QNhpkZ1tsP2510n-GHk4snz6fnAT3yisQVhm13E1xcotR5akfl_M49q-f7yU"/>
+<img alt="User avatar female" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAigKDl7ga3WL88Wl-YpQJaSLjWHGJSykEZjx9yKz7yz7ZiasdFI6TFMzF_fYoGqvKW_ghSKieFgZ69YN2PhVM9bv9gTfw7Cz3HYB9MLEd1_KljJZM3D0fbPNmYkTwISXt5c4-RxfBOpgHuNTjk_B2EIC63wkSRRBRVo9CFH63bREJVnRA_t6kqV4XD7t2B7K_wNct4zttyjlnztPEpr87oCEZRpL9uHJzygwnMaL6LkH4cOnbWZQqseq8Ik1V5yLFo37jReRs-Rvs"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 ring-2 ring-white dark:ring-surface-dark">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-300">3/4</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-lg font-bold text-primary-dark dark:text-primary">¥50<span class="text-xs font-normal text-gray-500 dark:text-gray-400">/人</span></p>
+</div>
+<button class="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-black shadow-md shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                            报名
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Regular -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm transition-all hover:shadow-md border border-transparent dark:border-white/5">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-900/30 px-2 py-0.5 text-xs font-bold text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-600/20">NTRP 4.0+</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white leading-tight truncate">周三晚间单打练习</h3>
+<p class="mt-1 flex items-center text-sm text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">schedule</span>
+                            10月16日 周三 19:00 - 21:00
+                        </p>
+<p class="mt-0.5 flex items-center text-sm text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">location_on</span>
+                            国家网球中心 <span class="ml-1 text-gray-400">(5.0km)</span>
+</p>
+</div>
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-gray-100">
+<img alt="Green tennis ball on court" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV2ILZbcSd_tjsM7kWhOgVh2OzJRD-Qrul-zHoTnRo5GtmfdQ92ofHZyd_SoBonVojEZROHCJTcOTg7CVGBuUKnZMyXS-1wKmlnNw7-wG5MB_nK0YFT87CDHz7xGm_RSY2eYT8nIirLUhzZxD66PK5itf9x_BkkPlzCxGDRWUp7P0RdWF17x9pZFhDVTGdRX5h47v5vWs0EycR2WA4tC-L3VedBdWMc1n_1fyQRLf8-lA_ETiGIkVsb6jBgVQ12TzePBSfoz5mzE8"/>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-white/5"></div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="User avatar male glasses" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC8cMe1e-ybe6XrauNC98P_VQ2E5M9_ieW859ssP9EseLugEzNtnZ9JWZLLTA8eHlaYrnbWvATPmnAp6rbMEOnrCOg-qtBO_UhcN_U1Zs4dZjRui0QCyXbQjR0kjjOB4Utoo4keX2ncWqyL782q3-5VOI_pIiQC_5c52pfInOXvEmzLfxi_VqUNK9F8rdrozq354XRQcMe81HWyqlqUk2yrkTcpZlbxYmZhbqfVcHDl7ZoUet-YO0E7vrZrZUzlUQa9r9QFyrA7Kk"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 ring-2 ring-white dark:ring-surface-dark">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-300">1/2</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-lg font-bold text-primary-dark dark:text-primary">¥80<span class="text-xs font-normal text-gray-500 dark:text-gray-400">/人</span></p>
+</div>
+<button class="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-black shadow-md shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+                            报名
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Full (Sold Out style) -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm opacity-90 border border-transparent dark:border-white/5">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-600/20">新手友善</span>
+<span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-700 px-2 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">已满员</span>
+</div>
+<h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 leading-tight truncate">周日清晨多球训练</h3>
+<p class="mt-1 flex items-center text-sm text-gray-500 dark:text-gray-500">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">schedule</span>
+                            10月13日 周日 08:00 - 10:00
+                        </p>
+<p class="mt-0.5 flex items-center text-sm text-gray-500 dark:text-gray-500">
+<span class="material-symbols-outlined mr-1 shrink-0" style="font-size: 16px;">location_on</span>
+                            奥林匹克森林公园 <span class="ml-1 text-gray-400">(4.2km)</span>
+</p>
+</div>
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-gray-100 grayscale opacity-70">
+<img alt="Tennis racket on clay court" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhtNEAS83YbVDdqSrjAwnotfrUq7K6V7BP2HkOx__uVUiRgq_5tLDv-QtKLhc5e2WD460bEaRruRXhFVznWyzfdvdujrd9cIrb0NbnWsCg6SuljSrEl9_bHNcoixMGRpkn7hL229QKDT55dEBGWFhSYLRTBP8eItHP-smHP-ZSkDGIwlsgcfjgHpJvKWbaJFVGSFMZjIrjZh9CuINt7RGbA_OC6LpPmMpca9RyheEubAMZDUAszHCXb4CXuMKIjI1WnE5qp7ReEKA"/>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-white/5"></div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex -space-x-2 overflow-hidden opacity-60">
+<img alt="Avatar 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJRc3i8gtCM-ot_hDbEeM01eojdly7MPHlpHDUL4r_nUtJzEnt1djhoKB_BeS10rC01Zy9VovB8AY5kLbpXSr0Pw2v242zoe0dxzN3sMbnaNn4HKhYaU_ACZ5yQQqX8LMD2UwhFZBKZdpbYCjAjYlEGDvvNFg2_kdDeMcQHu-GcIfssNJTtsCrjbsij-Y23ZlAwvHxkJbym-J33guaipJIPe-uImduJTzcpZlCOT2HauGRDEVw2z96LxLbWVXAxQD-xd3TncOKFvw"/>
+<img alt="Avatar 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfsFcOkicCkGQ5D2gVG3lEbfKDI-dnlgnuOhLWawx1w7N-WkVOeChj15Qp1nT3Jwv8D0JSsFfIVj9un-1qGmr-wwFSABJPznGJfEcThYq7FuWtTdTqS7NVygkAOiQKgnoJJMfUTOwQyVmNFZ26ZDsW91mhX0JIGGmn37q2WLawQELUIK8IuwfX3gLsb_y7vsApJ0qxYyz1f-BbaxvkQbFv0umAy5DgQRyl4WC6eg73XeZXtoB5IB9XxDrGnJwocwxg3o_GJK66VWM"/>
+<img alt="Avatar 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlpmKhHqobbxZDD_fdt2YRHkaJQCc1-ljI1hegxPGYcbCbONjW6FnPJmHOcIJUqymNp_wpbezt_aPcpShu0n88Yv4EPx7F_1twjmRtCmfdFM50ZMl7JEp_zb_CIIN4o56kXyZpyEfkacgQYoOUBhCFxQWv1aiIy8gQj3WqMAd9KfqegfluM-gvATdEoYeMwoHCOOh5f7Mf7q9BDUXwYkEO7aTezQF0_eWgvsTnzd12I-91zPY2QVW3HZwrvGpGWFUso-4OvoWEd4g"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 ring-2 ring-white dark:ring-surface-dark">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-300">6/6</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right opacity-60">
+<p class="text-lg font-bold text-gray-500 dark:text-gray-400">¥40<span class="text-xs font-normal">/人</span></p>
+</div>
+<button class="cursor-not-allowed rounded-lg bg-gray-100 dark:bg-white/10 px-5 py-2 text-sm font-bold text-gray-400 dark:text-gray-500 shadow-none" disabled="">
+                            满员
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Optional alternative to header button, included for completeness) -->
+<button class="fixed bottom-24 right-6 flex size-14 items-center justify-center rounded-full bg-primary text-black shadow-lg shadow-primary/40 transition-transform active:scale-95 hover:bg-primary/90 z-20 md:hidden">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 z-40 w-full max-w-md border-t border-gray-100 dark:border-white/5 bg-white dark:bg-surface-dark">
+<div class="flex h-20 items-start pt-3 justify-around">
+<button class="group flex flex-col items-center gap-1 w-16">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors" style="font-size: 26px;">sports_tennis</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary transition-colors">球场</span>
+</button>
+<button class="group flex flex-col items-center gap-1 w-16">
+<span class="material-symbols-outlined text-primary" style="font-size: 26px; font-variation-settings: 'FILL' 1;">event</span>
+<span class="text-[10px] font-medium text-primary">约球</span>
+</button>
+<button class="group flex flex-col items-center gap-1 w-16">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors" style="font-size: 26px;">shopping_bag</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary transition-colors">商城</span>
+</button>
+<button class="group flex flex-col items-center gap-1 w-16">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors" style="font-size: 26px;">person</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary transition-colors">我的</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

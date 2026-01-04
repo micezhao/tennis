@@ -1,0 +1,210 @@
+<template>
+  <div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+    <!-- TopAppBar -->
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <div class="flex items-center px-4 h-14 justify-between">
+        <button @click="router.back()" class="text-text-main-light dark:text-text-main-dark flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition">
+          <span class="material-symbols-outlined">arrow_back_ios_new</span>
+        </button>
+        <h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Checkout</h2>
+      </div>
+    </header>
+
+    <!-- Main Content Scroll Area -->
+    <main class="flex-1 overflow-y-auto no-scrollbar pb-40">
+      <!-- Shipping Address Section -->
+      <div class="mt-2">
+        <div class="flex items-center justify-between px-4 pt-4 pb-2">
+          <h3 class="text-text-main-light dark:text-text-main-dark text-lg font-bold tracking-tight">Shipping Address</h3>
+        </div>
+        <div class="mx-4 mt-2 mb-6">
+          <div class="flex gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="flex items-start gap-3 w-full">
+              <div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div class="flex flex-1 flex-col justify-center">
+                <div class="flex justify-between items-start">
+                  <p class="text-text-main-light dark:text-text-main-dark text-base font-semibold leading-normal">Alex Johnson</p>
+                  <button class="text-primary text-sm font-medium hover:underline">Edit</button>
+                </div>
+                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-relaxed mt-1">+1 (415) 555-0199</p>
+                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-relaxed">88 Tennis Court Rd, Wimbledon Park, London SW19</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary Section -->
+      <div>
+        <div class="flex items-center justify-between px-4 pt-2 pb-2">
+          <h3 class="text-text-main-light dark:text-text-main-dark text-lg font-bold tracking-tight">Order Summary</h3>
+          <span class="text-text-sub-light dark:text-text-sub-dark text-sm">2 Items</span>
+        </div>
+        <!-- Item 1 -->
+        <div class="mx-4 mb-3">
+          <div class="flex gap-4 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="shrink-0 relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <img alt="Tennis Racket" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHutLZ6WJXJkHyU5H454Be_wgmqa7kuSoNs7_PW9vPR77__a912f2iyBtkDjCpw3--Lgqb0CNWBDDQABlzID2-AD2EYu0sTF3xlTE7mEB8YKfVx_ksOu3p3dRwBSykFy05_xeByZelRm53sXxLAdfGOpnpSoZXH6ELEaAn-k7ud0ofiN8p3GYoNx3YOw8wkOwi2J1U9PvKfnRUrQ3Jo6bclAwoOlmXao47ESYOgZL02-55gxLly3JxnLSWB8VhYEGuzqrcaY6DXgE"/>
+            </div>
+            <div class="flex flex-1 flex-col justify-between py-1">
+              <div>
+                <h4 class="text-text-main-light dark:text-text-main-dark text-base font-semibold leading-tight line-clamp-1">Wilson Pro Staff v14</h4>
+                <p class="text-text-sub-light dark:text-text-sub-dark text-xs mt-1">Grip Size: 4 3/8 • Red/Black</p>
+              </div>
+              <div class="flex justify-between items-end">
+                <p class="text-text-main-light dark:text-text-main-dark text-base font-bold">$249.00</p>
+                <div class="flex items-center gap-2 bg-background-light dark:bg-background-dark rounded-lg px-2 py-1">
+                  <span class="text-xs text-text-sub-light dark:text-text-sub-dark">x1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="mx-4 mb-6">
+          <div class="flex gap-4 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="shrink-0 relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <img alt="Tennis Balls" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcO8LRHsV0XboCrXrjKOxeZGNeGCQHbnrUfA9ctPPOPzxz78T8aalxo1wMjrnBaoJQykSeeBllYWOQkEE2Q9wjbvDTx7v-Z5R2vNXpGn8-BKcbDbGqGYCVrvQdRIOOCi7fBQVbN9qBtReBYOQDsCCqv16VKGsZl4F_qyxpp7B7noVuQjRcDtGtBUfIaiHlJax-2OMB-Fh7fyDLw1gSJc3NsHFhRW5ZfbtDXidYQ0P7JvDLaWUC1ucGDjAFsXvn9bHzrSciPRD2r-w"/>
+            </div>
+            <div class="flex flex-1 flex-col justify-between py-1">
+              <div>
+                <h4 class="text-text-main-light dark:text-text-main-dark text-base font-semibold leading-tight line-clamp-1">US Open Extra Duty Balls</h4>
+                <p class="text-text-sub-light dark:text-text-sub-dark text-xs mt-1">Can of 3 • Yellow</p>
+              </div>
+              <div class="flex justify-between items-end">
+                <p class="text-text-main-light dark:text-text-main-dark text-base font-bold">$8.50</p>
+                <div class="flex items-center gap-2 bg-background-light dark:bg-background-dark rounded-lg px-2 py-1">
+                  <span class="text-xs text-text-sub-light dark:text-text-sub-dark">x3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Method Section -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between px-4 pt-2 pb-2">
+          <h3 class="text-text-main-light dark:text-text-main-dark text-lg font-bold tracking-tight">Payment Method</h3>
+          <button class="text-primary text-sm font-medium">Add New</button>
+        </div>
+        <div class="mx-4 space-y-3">
+          <!-- Apple Pay (Selected) -->
+          <div 
+            class="relative group cursor-pointer"
+            @click="selectedPayment = 'apple_pay'"
+          >
+            <div v-if="selectedPayment === 'apple_pay'" class="absolute inset-0 bg-primary/5 rounded-xl border-2 border-primary z-0"></div>
+            <div v-else class="absolute inset-0 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 z-0"></div>
+            
+            <div class="relative z-10 flex gap-4 p-4 items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded bg-black flex items-center justify-center text-white shrink-0">
+                  <span class="material-symbols-outlined text-xl">ios</span>
+                </div>
+                <div>
+                  <p class="text-text-main-light dark:text-text-main-dark text-base font-semibold">Apple Pay</p>
+                  <p class="text-text-sub-light dark:text-text-sub-dark text-xs">Default method</p>
+                </div>
+              </div>
+              <div :class="selectedPayment === 'apple_pay' ? 'text-primary' : 'text-gray-400 dark:text-gray-600'">
+                <span class="material-symbols-outlined fill-1">{{ selectedPayment === 'apple_pay' ? 'radio_button_checked' : 'radio_button_unchecked' }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Credit Card (Unselected) -->
+          <div 
+            class="relative group cursor-pointer"
+            @click="selectedPayment = 'credit_card'"
+          >
+            <div v-if="selectedPayment === 'credit_card'" class="absolute inset-0 bg-primary/5 rounded-xl border-2 border-primary z-0"></div>
+            <div v-else class="absolute inset-0 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 z-0"></div>
+
+            <div class="relative z-10 flex gap-4 p-4 items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 shrink-0">
+                  <span class="material-symbols-outlined text-xl">credit_card</span>
+                </div>
+                <div>
+                  <p class="text-text-main-light dark:text-text-main-dark text-base font-medium">Mastercard **** 8842</p>
+                  <p class="text-text-sub-light dark:text-text-sub-dark text-xs">Expires 12/26</p>
+                </div>
+              </div>
+              <div :class="selectedPayment === 'credit_card' ? 'text-primary' : 'text-gray-400 dark:text-gray-600'">
+                <span class="material-symbols-outlined">{{ selectedPayment === 'credit_card' ? 'radio_button_checked' : 'radio_button_unchecked' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Breakdown -->
+      <div class="px-4 pb-4">
+        <div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+          <div class="flex justify-between items-center mb-2">
+            <p class="text-text-sub-light dark:text-text-sub-dark text-sm">Subtotal</p>
+            <p class="text-text-main-light dark:text-text-main-dark text-sm font-medium">$274.50</p>
+          </div>
+          <div class="flex justify-between items-center mb-2">
+            <p class="text-text-sub-light dark:text-text-sub-dark text-sm">Shipping</p>
+            <p class="text-text-main-light dark:text-text-main-dark text-sm font-medium text-primary">Free</p>
+          </div>
+          <div class="flex justify-between items-center mb-4">
+            <p class="text-text-sub-light dark:text-text-sub-dark text-sm">Tax (8%)</p>
+            <p class="text-text-main-light dark:text-text-main-dark text-sm font-medium">$21.96</p>
+          </div>
+          <div class="h-px w-full bg-gray-100 dark:bg-gray-800 mb-4"></div>
+          <div class="flex justify-between items-center">
+            <p class="text-text-main-light dark:text-text-main-dark text-base font-bold">Total</p>
+            <p class="text-text-main-light dark:text-text-main-dark text-xl font-bold">$296.46</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Note -->
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <span class="material-symbols-outlined text-gray-400 text-sm">lock</span>
+        <p class="text-gray-400 text-xs font-medium">Payments are secure and encrypted</p>
+      </div>
+    </main>
+
+    <!-- Sticky Bottom Bar -->
+    <div class="absolute bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 p-4 pb-8 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex flex-col">
+          <span class="text-xs text-text-sub-light dark:text-text-sub-dark">Total Amount</span>
+          <span class="text-2xl font-bold text-text-main-light dark:text-text-main-dark">$296.46</span>
+        </div>
+        <!-- Small discount badge -->
+        <div class="bg-primary/20 px-3 py-1 rounded-full">
+          <span class="text-xs font-semibold text-primary-darker text-[#0b8e2b] dark:text-primary">Free Shipping applied</span>
+        </div>
+      </div>
+      <button class="w-full bg-primary hover:bg-[#0fd641] active:bg-[#0cb838] text-black font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2">
+        <span>Confirm Payment</span>
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const selectedPayment = ref('apple_pay')
+</script>
+
+<style scoped>
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>

@@ -1,0 +1,162 @@
+<template>
+  <div class="min-h-screen bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+    <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+      <header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-transparent dark:border-white/5 transition-all duration-200">
+        <div @click="router.back()" class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer transition-opacity hover:opacity-70">
+          <span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios</span>
+        </div>
+        <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Match Registration</h2>
+        <div class="flex w-12 items-center justify-end">
+          <button class="flex size-12 shrink-0 items-center justify-end cursor-pointer text-slate-900 dark:text-white transition-opacity hover:opacity-70">
+            <span class="material-symbols-outlined" style="font-size: 24px;">ios_share</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex flex-col gap-4 px-4 pt-2">
+        <div class="bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-flex items-center rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-semibold text-green-800 dark:text-green-300">
+              Open
+            </span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">NTRP 3.0+</span>
+          </div>
+          <h1 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight mb-6">Sunday Morning Doubles</h1>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="flex items-center justify-center rounded-xl bg-slate-50 dark:bg-white/10 shrink-0 size-10 text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined" style="font-size: 20px;">calendar_month</span>
+              </div>
+              <div class="flex flex-col pt-0.5">
+                <p class="text-slate-900 dark:text-white text-sm font-semibold leading-normal">Oct 24, Sunday</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">10:00 AM - 12:00 PM</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="flex items-center justify-center rounded-xl bg-slate-50 dark:bg-white/10 shrink-0 size-10 text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined" style="font-size: 20px;">location_on</span>
+              </div>
+              <div class="flex flex-col pt-0.5 flex-1">
+                <p class="text-slate-900 dark:text-white text-sm font-semibold leading-normal">Central Park Tennis Center</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm leading-normal">1 Chaoyang Park South Rd</p>
+              </div>
+              <div class="flex items-center justify-center size-8 rounded-full border border-slate-200 dark:border-white/20 text-slate-400 dark:text-slate-500">
+                <span class="material-symbols-outlined" style="font-size: 18px;">near_me</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex items-center justify-center rounded-xl bg-slate-50 dark:bg-white/10 shrink-0 size-10 text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined" style="font-size: 20px;">payments</span>
+              </div>
+              <p class="text-slate-900 dark:text-white text-sm font-semibold leading-normal flex-1">¥50 / Person <span class="text-xs font-normal text-slate-500 dark:text-slate-400">(Includes court & balls)</span></p>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-slate-100 dark:border-white/10">
+            <div class="flex justify-between items-end mb-2">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Participants</span>
+              <div class="text-right">
+                <span class="text-lg font-bold text-slate-900 dark:text-white">3</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500">/ 4</span>
+              </div>
+            </div>
+            <div class="w-full bg-slate-100 dark:bg-white/10 rounded-full h-2.5 overflow-hidden">
+              <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+            <div class="flex items-center gap-3 mt-4">
+              <div class="flex -space-x-2 overflow-hidden">
+                <img alt="Participant 1" class="inline-block size-8 rounded-full ring-2 ring-white dark:ring-[#1a1a1a] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJoiDGfmib1QaNdSLU79FUvpBdmSFoBcvyqxquILwRmtFxifPe-LV1Bl1rYBnIO3g3I28hGt27Srr15H-iTpZPOvO5ZxNQKa7EWjF8-5p4UR5IEhLJx68jZlFa1Pf6-ehvn0Vq1Gomc5WHKi5wIRYB_ip6sUOvxDfCTip0ROFxnYplIpFwu9INmK9ek4e1zUwukViTDrZFd15wIw4slGtY3_yFfRoAMrRgUltgECehUT-ghFUyh2VDELBA0ZnCmTsMwz5HfFB4JFM"/>
+                <img alt="Participant 2" class="inline-block size-8 rounded-full ring-2 ring-white dark:ring-[#1a1a1a] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMLp13m1bIaAb302TpIdMqz03LrjW1rtr-mRFRn5D1lu1cyURZoPOC4b_vUM_WHSe3vbFpBdu0P4yq-Nx0YkWaL5axz5H3sLcgOnxFSOUd1S-YAHbls5-RuJ4Wqk613JKdDL3Fdrz3YSqKI-IVYx2gHqRwjD6enle9OlSED3I2YXuVPER8mnCyXbyQksOrfxLQnU5r5YK2k1QwhNydKGz9tNX_FV2Mf_DiZ6UxpnD1vfGq-bY323lppoazdejdTG3OKLXQfY5IqI"/>
+                <img alt="Participant 3" class="inline-block size-8 rounded-full ring-2 ring-white dark:ring-[#1a1a1a] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7FhuETe8_oVpuYx_7Db8-LqkPdHMcVjQeXIj_8ua8O0hMud16iquSyZCzIKBRIuKcFIzHkMahKXcewbw1Qyj92iw58zIGxVfaqlvfNECDaHZxzoNPLCiZvxwIjFhWVhaVRcOa6EgpFgA4hjU4bOeQCevYhht9iQWHw2mW50iW6mQBdFdexTIjjxvkfnYu6WGfjl5tls8B7R0BcvB-ldrlLTjYjVMnA11eUjt1UWdiHeaX8qz52xmKe6NfeAiShoPbnga4IfizURc"/>
+              </div>
+              <span class="text-xs text-slate-500 dark:text-slate-400">Only 1 spot left!</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 p-5">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="relative">
+              <img alt="Organizer" class="size-14 rounded-full object-cover border-2 border-slate-100 dark:border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC7VNB__-EEFsHzIISRPR_bNRdm3nyMabDjpDCaZrNDSo_qMCnf3gcT59LjhK8J92nMN7Ba3wIucqsoRCWzEMi89QqBt17drg-PlrqeyADiK8sUQPljRJS4FcfLNTTk74Gr54k92_UzETby3OpnvYH7pGjJPRn5RB3mty4W_kEnzfY7ZuPPPr2tWkds7Cyz2-pp0i-xjZz3RhaUkymLqYwby-mGob5iFc40YrEdU_viM_5N1Ikz6vbiA78t5G5gDjKokePQPL8V6U"/>
+              <div class="absolute -bottom-1 -right-1 bg-primary text-[10px] text-black font-bold px-1.5 py-0.5 rounded-md border border-white dark:border-[#1a1a1a]">
+                Organizer
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Coach Li</h3>
+              <div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                <span class="material-symbols-outlined text-yellow-500" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+                <span class="font-medium text-slate-700 dark:text-slate-200">4.9</span>
+                <span>•</span>
+                <span>Verified</span>
+              </div>
+            </div>
+            <button class="flex items-center justify-center size-8 text-slate-400 dark:text-slate-500">
+              <span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
+            </button>
+          </div>
+          <div class="grid grid-cols-3 gap-2 bg-slate-50 dark:bg-white/5 rounded-xl p-3">
+            <div class="text-center">
+              <div class="text-lg font-bold text-slate-900 dark:text-white">52</div>
+              <div class="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">Matches</div>
+            </div>
+            <div class="text-center border-l border-slate-200 dark:border-white/10">
+              <div class="text-lg font-bold text-slate-900 dark:text-white">98%</div>
+              <div class="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">Completion</div>
+            </div>
+            <div class="text-center border-l border-slate-200 dark:border-white/10">
+              <div class="text-lg font-bold text-slate-900 dark:text-white">321</div>
+              <div class="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">Reviews</div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-2">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Show Your Skills</h3>
+            <span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-white/10 px-2 py-1 rounded-md">Optional</span>
+          </div>
+          <label class="group relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-2xl bg-white dark:bg-white/5 cursor-pointer hover:bg-slate-50 dark:hover:bg-white/10 hover:border-primary transition-all duration-300">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6 text-center px-4">
+              <div class="bg-primary/10 p-3 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                <span class="material-symbols-outlined text-primary" style="font-size: 32px;">videocam</span>
+              </div>
+              <p class="mb-1 text-sm font-medium text-slate-900 dark:text-white">Upload a 15s rally video</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Help others know your level</p>
+            </div>
+            <input accept="video/*" class="hidden" id="dropzone-file" type="file"/>
+          </label>
+        </div>
+        <div class="pb-6">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Message</h3>
+            <span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-white/10 px-2 py-1 rounded-md">Optional</span>
+          </div>
+          <div class="relative">
+            <textarea class="w-full h-28 p-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-200 resize-none text-sm shadow-sm" placeholder="Leave a message for the organizer (e.g., need to borrow a racket, or note your level)"></textarea>
+          </div>
+        </div>
+      </main>
+      <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-[#102215]/90 backdrop-blur-lg border-t border-slate-200 dark:border-white/10 px-6 py-4 pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <div class="flex items-center justify-between gap-6 max-w-2xl mx-auto">
+          <div class="flex flex-col">
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Total</span>
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold text-slate-900 dark:text-white">¥50</span>
+            </div>
+          </div>
+          <button class="flex-1 bg-primary hover:bg-green-400 text-slate-900 font-bold text-base h-12 rounded-full shadow-lg shadow-primary/25 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
+            Join Now
+            <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+</script>
+
+<style scoped>
+/* Add any specific styles here if needed */
+</style>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tennis Mall</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec49",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-gray-100 font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Sticky Header & Search -->
+<header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-white/10">
+<div class="flex items-center justify-between px-4 pt-4 pb-2">
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Tennis Mall</h2>
+<div class="flex items-center gap-4">
+<button class="relative flex items-center justify-center text-[#111813] dark:text-white">
+<span class="material-symbols-outlined text-[28px]">notifications</span>
+</button>
+<button class="relative flex items-center justify-center text-[#111813] dark:text-white">
+<span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-black">2</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4 pt-2">
+<label class="flex flex-col h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#61896b] dark:text-gray-400 flex border-none bg-white dark:bg-white/10 items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111813] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-white/10 focus:border-none h-full placeholder:text-[#61896b] dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search for Head, Wilson, Babolat..." value=""/>
+</div>
+</label>
+</div>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Categories Carousel -->
+<section class="w-full overflow-hidden pt-4 pb-2">
+<div class="flex overflow-x-auto no-scrollbar px-4 pb-2">
+<div class="flex min-h-min flex-row items-start justify-start gap-6">
+<!-- Category Item 1 -->
+<div class="flex flex-col items-center justify-center gap-2 w-[68px] cursor-pointer group">
+<div class="w-[68px] h-[68px] bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-200 dark:border-white/5 shadow-sm group-hover:border-primary transition-colors overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Tennis racket icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5WVD4AnjU66_R4sxogMd-AoTF7f3Y74LVBSd2WyeHMBphzn-N929XGPRHZL2tDony15b4bd_mU8oOCONqp9zFY-Wm9BgwaXy6hV9cMZ-ftjb9Oa74uYMqHrbRx7lBwW5XuwRVfyhR5miTvzaPTQnntDvOWOPrWe2gUvkpbJ2idC0UelhQ6_VCtgPMIiog6O4BmC1itdWGBycGaAF9VuCqQQ2hgLCIgIWteUKCpFsuUjVkkonKUhVVXH04BfQIDGNKXr71atwSXTs');"></div>
+</div>
+<p class="text-[#111813] dark:text-gray-200 text-xs font-medium leading-normal text-center">Rackets</p>
+</div>
+<!-- Category Item 2 -->
+<div class="flex flex-col items-center justify-center gap-2 w-[68px] cursor-pointer group">
+<div class="w-[68px] h-[68px] bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-200 dark:border-white/5 shadow-sm group-hover:border-primary transition-colors overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Tennis shoes icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB17XytQwlh5DovqmhPeFLose1NvOvFLADzgUSfjjP5HXmTB8aYUxIhgVh-7JpQYQCUbMYYQIIWnNmvJIOKANg-U27hGMlceNcWArigCem6WEMHP0jVGGXj7BacRmZlF5qBq-jvF7c3pSXY0XLpQulrngY_A8yDBZ5fVQ8HUIfBUwSVD41F7tqCKtaXIQdgfN023fd0PS14wH8lKL20a-tk4oxXwqUPW3FXUSFpEO6pG9Q_2_iiDjLmeZ19Mc39gIB2lABNn987Bk0');"></div>
+</div>
+<p class="text-[#111813] dark:text-gray-200 text-xs font-medium leading-normal text-center">Shoes</p>
+</div>
+<!-- Category Item 3 -->
+<div class="flex flex-col items-center justify-center gap-2 w-[68px] cursor-pointer group">
+<div class="w-[68px] h-[68px] bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-200 dark:border-white/5 shadow-sm group-hover:border-primary transition-colors overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Tennis apparel icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAf2ZP1n4UONJHkXZ6MqqQ6R0HmSw7SiJjwbR5DccCjOMGkpe9zvu20QeSpm8pUdadmRi_H4JdT7RKo8G3B20OEM_fXQ1AQRLMH-xEtoMpPHsamJgxgbtFBA8IVnMXGPWucmtw6An8CFPIVYJn6jIbkbdwE1xH8KUgiJWU53aP4sqakwdgWX-k72pV1xuXdPUApzNJP_9oMSq3AmI22l0SCgkgqH3VIMqM96hBtmKVQzGhHgqZzWwPyQg584QQU-BS6jSiipZEfAcM');"></div>
+</div>
+<p class="text-[#111813] dark:text-gray-200 text-xs font-medium leading-normal text-center">Apparel</p>
+</div>
+<!-- Category Item 4 -->
+<div class="flex flex-col items-center justify-center gap-2 w-[68px] cursor-pointer group">
+<div class="w-[68px] h-[68px] bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-200 dark:border-white/5 shadow-sm group-hover:border-primary transition-colors overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Tennis balls icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgi5ODRVzYanpaWgNIn6SfDWJuTcXjFFzB3K9JH2IqQps3pFq0-aY4M5nBpAa0SRWF0Nkj1ue6NDBS8hRA-QJr0EOaXBvwXXtW5L6FNmzlqCdNMZNF1m8k90WmKjVEzEc_Bg9sonBHSHx-B9jDE3Bza6XuuOu1sXdN1QlTFks61S5MQm37_TjsllFwLZvs9IeXCBjBPf1ZQZ06jbyCv-9oAA-nnHf9dxSn3VZJ5zRega8daMOlnwlXys3Pdb5TADB67fsmIIF8iBw');"></div>
+</div>
+<p class="text-[#111813] dark:text-gray-200 text-xs font-medium leading-normal text-center">Balls</p>
+</div>
+<!-- Category Item 5 -->
+<div class="flex flex-col items-center justify-center gap-2 w-[68px] cursor-pointer group">
+<div class="w-[68px] h-[68px] bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-200 dark:border-white/5 shadow-sm group-hover:border-primary transition-colors overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Tennis bag icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWRl_fswowCclkoVFEBCzqtPj6kw-DXAqh5aPC45XSFePJVYRBRqi19voggSRh-9KXOomdXUkBbJLPTd7v9kBCNFeXeybrILpPVZZa0tiT7irXCKV7FIJDzXsNFaS_EjPX-u6uC0pWLsvmjGdNgRqyjcGjRE3iAcaMPPLObNhHqqPbMMaa7rFRkMPOt0QLrjOYGCg8GtQR-2nJ1V2WNrSB6XIClhZCx4XUN3ixKF_OfnxJm0izki8u4UX1P8YgXYoLmk3h9ydmytw');"></div>
+</div>
+<p class="text-[#111813] dark:text-gray-200 text-xs font-medium leading-normal text-center">Bags</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotional Carousel -->
+<section class="mt-2">
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 pb-4 gap-4">
+<!-- Slide 1 -->
+<div class="snap-center shrink-0 w-[85vw] md:w-[400px]">
+<div class="relative w-full aspect-[2/1] bg-black rounded-2xl overflow-hidden shadow-md">
+<div class="absolute inset-0 bg-center bg-cover opacity-80" data-alt="Tennis court summer vibe with bright sunlight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5ft0tMpvKUZrBl14xCyUBWsnDVSIQQbB2UTHsorq4LuNkHNJ_1UPcaQb9K1uGKCUymS2avJzFufn8wOFMP1YWTIuiofm0tsiHXrhhDG2Qn2MZsVVpA-CPbGTbSYuX59jh8FNnJXjkJdKqfe1tOrRwLuMMS6G4C23RWJ-wPXz2gcarfYyTK4WZtKf7cEa1Q0O_xTBPxgOSDuYo9plB7ivDuGaXIM-uFG8DBH6LqGYxOs5A7Ao0kwIoAyj9rM3xSKvTLbziM3JaI5g');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<div class="bg-primary text-black text-xs font-bold px-2 py-1 rounded w-fit mb-2">LIMITED TIME</div>
+<h3 class="text-white text-xl font-bold leading-tight mb-1">Summer Open Sale</h3>
+<p class="text-gray-200 text-sm">Up to 50% Off Top Brands</p>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="snap-center shrink-0 w-[85vw] md:w-[400px]">
+<div class="relative w-full aspect-[2/1] bg-black rounded-2xl overflow-hidden shadow-md">
+<div class="absolute inset-0 bg-center bg-cover opacity-80" data-alt="Professional tennis player serving a ball" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTPx936jqHsV_Pv8-i_WiAow98nCf4P_PU7YUl9i6sapdnsZtoMPJuT6iSOIGHV35qRvsE7DP5mEl_fK-vXTicOKAg6AVUbTudJk5A6TAi-pXL_wbueaJckqMJaF4C9luO6zNXCrA3aUac4Kzxvv7b4O9CWyQ5Tp3RlCClk2xRpsfjSs3zSAufIMyw2kdLnMSsrcTfTP6qQrPGm9XUNjfTxrY72wdkLRl3pm5El8eWS8uqqNVDkehi7JUOpUwcLjldIjrbL1n0o1s');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<div class="bg-white text-black text-xs font-bold px-2 py-1 rounded w-fit mb-2">NEW ARRIVAL</div>
+<h3 class="text-white text-xl font-bold leading-tight mb-1">New Pro Staff v14</h3>
+<p class="text-gray-200 text-sm">Precision meets heritage.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Gear (Horizontal Scroll) -->
+<section class="mt-2">
+<div class="flex items-center justify-between px-4 pb-3">
+<h3 class="text-lg font-bold leading-tight text-[#111813] dark:text-white">Trending Gear</h3>
+<a class="text-primary text-sm font-medium" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto no-scrollbar px-4 pb-4 gap-4">
+<!-- Trending Card 1 -->
+<div class="w-40 shrink-0 flex flex-col gap-2">
+<div class="relative w-full aspect-[4/5] bg-white dark:bg-white/5 rounded-xl overflow-hidden p-2 flex items-center justify-center border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Wilson Clash 100 tennis racket" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMItCD3UzQx-xFuD2tTOLPpfF5Sb8pHA9gbUVV4OI4QALQoYSBOQHQwNJvvXUQuOMmm_gjsAHs1Lo7JQLs2Sy-ADw3zMLnDuzdKp9Vxt4NxVEjISfLJI_Cj5SBkip2zmLwRkLA27vJGnjRZtk7f9eUNDZ7j9jTwwjYxyw5qK5NnM5mJsGLVu2cmqKnKwl64cw7QwW2_kgDkTqxpHOlxGB13QXo9uoEOoiNu6adf3Tk6V8-EQ8sKoMhgm7Xq3ZWquBM1AN9wq1msb8');"></div>
+<button class="absolute top-2 right-2 bg-gray-100 dark:bg-black/40 backdrop-blur-sm p-1.5 rounded-full text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Wilson</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-tight truncate">Clash 100 v2</h4>
+<p class="text-sm font-bold text-[#111813] dark:text-gray-100 mt-1">$269.00</p>
+</div>
+</div>
+<!-- Trending Card 2 -->
+<div class="w-40 shrink-0 flex flex-col gap-2">
+<div class="relative w-full aspect-[4/5] bg-white dark:bg-white/5 rounded-xl overflow-hidden p-2 flex items-center justify-center border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Green tennis balls in a can" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKUXsyEcUSqO80rCG8_BytfRBenH76fJ3_PrFn1HKTPff_1EXsAWpF7mOHq7hvlGfACCcJ0qsP1L_pvWW_-ZfSlBK2TiZPOlJQFPDvWhortQhTVHIAjxlmPtZ-oMxhFGhJrsH02YW9AX2ArMER5mQWg1py1OzuAg-eHOdvf-JbFZjacoNIKqUTks8OVLzfsJ8J40iV3qW38Ct7N1DvOCwdzJXUzqMDB5gPPf3aS9ZtQwQxabt5bLKtPrJ70RtAD5-bjXJhfdpDcxc');"></div>
+<button class="absolute top-2 right-2 bg-gray-100 dark:bg-black/40 backdrop-blur-sm p-1.5 rounded-full text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Penn</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-tight truncate">Championship Balls 3pk</h4>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-sm font-bold text-[#111813] dark:text-gray-100">$4.99</p>
+<span class="bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded">-10%</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 3 -->
+<div class="w-40 shrink-0 flex flex-col gap-2">
+<div class="relative w-full aspect-[4/5] bg-white dark:bg-white/5 rounded-xl overflow-hidden p-2 flex items-center justify-center border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="White tennis visor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDshOdA6r9X9bXLfbsYWJGc87LoIO4jb8T82IQfHz-4gtbOFuXmdthcPfHDEfN2h3dj5qaXzZ4OxzgBMBNnZ4anRED-tQtZcmsLvTX0yoK35M5wsdymLZo9x2iokYD3h3m0OHXFcQtJNX8YA7gpHWJQIJgzhDBRysvJ4eMth9eca_x6RrU8boIbmiI0b1zF6bskFEThWis8K24oa03W4KRZeqF8fwg6ShUqn_itHbu_dfANFZq02_OCZ5zS4UR8NwsNAVGvaV9FpjM');"></div>
+<button class="absolute top-2 right-2 bg-gray-100 dark:bg-black/40 backdrop-blur-sm p-1.5 rounded-full text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Nike</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-tight truncate">Court AeroBill Visor</h4>
+<p class="text-sm font-bold text-[#111813] dark:text-gray-100 mt-1">$22.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Just For You (Grid) -->
+<section class="mt-2 px-4">
+<h3 class="text-lg font-bold leading-tight text-[#111813] dark:text-white pb-4">Just For You</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative bg-white dark:bg-white/5 rounded-2xl overflow-hidden aspect-[4/5] shadow-sm border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Babolat Pure Aero Racket" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6kAtb3BMOzuojgha2jwyjYrTkhyso-z2aERyxQ7zF0pT7eATzmSzEJcA7tvnp91tR3jsm0UqXvUTEZBQvbgZXrlx8_PBem9O9wuCnfW1DCRerT7HPi7hi_KzM7bq4oAiDnb2qvSVhenUrZl4xr4Z9yC-7tcRnWwnETAlPmH2Uu8TMEvPkdIm7Fm-thmphgwJgCN-Fmsii3C51NlEBOVO6U-DAUvQNS64VLtSN-HstH4zMHqP3OgPC52l7Ry-ccX8il2Jz3UPTsjQ');"></div>
+<button class="absolute bottom-3 right-3 bg-primary hover:bg-green-400 text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">add</span>
+</button>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Babolat</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-snug line-clamp-2 h-10 mt-0.5">Pure Aero 2023 Tennis Racket</h4>
+</div>
+</div>
+<p class="text-base font-bold text-[#111813] dark:text-white mt-1">$259.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative bg-white dark:bg-white/5 rounded-2xl overflow-hidden aspect-[4/5] shadow-sm border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Nike Court Zoom Vapor Shoes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnHdgl6AgSa-FtTVQWHQeKyiZXVuzurm2hoEv-EZLNA-bz9Tr2jJLF57N36sWbThbRPoYk1a9U2yrrPfuSGvZl4dDRM7ifMYTUUQYFOf3hFkYl4E2L2yf5WiujatI0TKMi4Jgrso9rou9Ur9f3eNLDf-PVMXXLgXauQAtN9Jwm0cnSYpdCHVVKHw6hMHUiPD-sKXVd44vwY8go31il9TrYtGtsAEHvDIHe1Gz2ox1fNiET9sqyrHnKqm2OSrH3iBTNtEQxSOHmDFE');"></div>
+<button class="absolute bottom-3 right-3 bg-primary hover:bg-green-400 text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">add</span>
+</button>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Nike</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-snug line-clamp-2 h-10 mt-0.5">Nike Court Zoom Vapor Cage 4</h4>
+</div>
+</div>
+<p class="text-base font-bold text-[#111813] dark:text-white mt-1">$150.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative bg-white dark:bg-white/5 rounded-2xl overflow-hidden aspect-[4/5] shadow-sm border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Adidas White Tennis Polo Shirt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtelHyMJgeAp2OFraHyeRRizbJolUhaD0SX3NneL-9qTd_7iuVmgE1XkYr5dO17T25IPEMrCO0Lh9vhXhf_zF4JveGtXQqmKEj_OcbGpjtUvv2RPW_JNQAt_K5SaeyLEYIahvD0xe0pPu7MJA_B6qOvM2qRn-qgXdL_JTTebv30OhDy1gUmrM-R1MBoU1B_fe20pm_7HWSng1jpXfz2NK3BhrgKwIAyYOR7kZrEsuZ99YMW50M0z-TpOFxxEiBWC3xrnOoeJWN9Y0');"></div>
+<button class="absolute bottom-3 right-3 bg-primary hover:bg-green-400 text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">add</span>
+</button>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded">-25%</div>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Adidas</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-snug line-clamp-2 h-10 mt-0.5">Club 3-Stripes Tennis Polo</h4>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-base font-bold text-[#111813] dark:text-white">$33.75</p>
+<p class="text-xs text-gray-400 line-through">$45.00</p>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative bg-white dark:bg-white/5 rounded-2xl overflow-hidden aspect-[4/5] shadow-sm border border-gray-100 dark:border-white/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Generic overgrip pack" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJtzpIOhvvEMOYl5uPFQJbcFfKAKuxzhcylm0-44QoN1Q-KIAyCD3w2o6tC-Zef46JVzW9oyLDQPyi1ipRnnz59VvkOXDBbJ5jw3_wZqJWNGNzO8eEXMq0FH0VZgaOV7XtyMhTTzmqg6DZFQrjcQZ59LpMFhRXYwhB0Yzp_FH7Zhv9grMaKzM57YthwyZcxhM1SAlJkhL_5cL1VI3-LBb3t7YPBgIJCJ8X_H9OdKMp8BQ5PiMPKnBo5RwnLk3UYi-Q8qoER3FGg8M');"></div>
+<button class="absolute bottom-3 right-3 bg-primary hover:bg-green-400 text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">add</span>
+</button>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Yonex</p>
+<h4 class="text-sm font-medium text-[#111813] dark:text-gray-100 leading-snug line-clamp-2 h-10 mt-0.5">Super Grap Overgrip 12-Pack</h4>
+</div>
+</div>
+<p class="text-base font-bold text-[#111813] dark:text-white mt-1">$29.00</p>
+</div>
+</div>
+</div>
+<div class="h-8"></div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-white/10 z-50">
+<div class="flex items-center justify-around h-[84px] pb-5">
+<a class="flex flex-col items-center justify-center w-full gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" href="#">
+<span class="material-symbols-outlined text-[26px]">map</span>
+<span class="text-[10px] font-medium">Courts</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" href="#">
+<span class="material-symbols-outlined text-[26px]">sports_tennis</span>
+<span class="text-[10px] font-medium">Matches</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[26px] font-bold fill-current">storefront</span>
+<span class="text-[10px] font-medium">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" href="#">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
