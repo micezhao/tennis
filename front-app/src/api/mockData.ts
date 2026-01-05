@@ -2,7 +2,7 @@ export const mockData = {
   userInfo: {
     userId: "user_001",
     nickName: "TennisFan",
-    avatarUrl: "https://example.com/avatar.png",
+    avatarUrl: "/images/default-avatar.png",
     gender: 1,
     age: 25,
     level: "3.5",

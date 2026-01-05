@@ -42,7 +42,7 @@ const router = createRouter({
     {
       path: '/matches/:id',
       name: 'match-detail',
-      component: () => import('../views/MatchDetail.vue')
+      component: () => import('../views/MatchDetailView.vue')
     },
     {
       path: '/matches/:id/success',
@@ -107,7 +107,7 @@ const router = createRouter({
     },
     {
       path: '/profile/match-history/:id',
-      name: 'match-detail',
+      name: 'profile-match-detail',
       component: () => import('../views/MatchDetailView.vue')
     },
     {
